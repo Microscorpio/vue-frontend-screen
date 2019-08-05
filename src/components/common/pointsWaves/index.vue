@@ -1,5 +1,5 @@
 <template>
-	<div id="testThree"></div>
+	<div id="pointsWaves"></div>
 </template>
 <script>
 import VueTypes from 'vue-types'
@@ -28,14 +28,16 @@ export default {
       renderer: null,
       particles: 0, 
       count: 0,
+      width: 1920,
+      height: 1080
     }
   },
   methods: {
     init: function() {
       const self = this
-      self.container = document.getElementById('testThree');
-      self.container.style.height = window.innerHeight + 'px'
-			self.camera = new Three.PerspectiveCamera( self.fov, window.innerWidth / window.innerHeight, self.near, self.far );
+      self.container = document.getElementById('pointsWaves');
+      self.container.style.height = self.height + 'px'
+			self.camera = new Three.PerspectiveCamera( self.fov, self.width / self.height, self.near, self.far );
 			self.camera.position.z = self.positionZ;
 			self.scene = new Three.Scene();
       let numParticles = self.aMountX * self.aMountY;
@@ -72,7 +74,7 @@ export default {
       self.renderer.autoClear = true
       // self.renderer.setClearColor('rgb(0,0,0)',1.0); 
       // self.renderer.setClearAlpha(0.01)
-      self.renderer.setSize( window.innerWidth, window.innerHeight );
+      self.renderer.setSize( self.width, self.height );
       self.container.appendChild( self.renderer.domElement );
     },
     animate: function() {
@@ -110,15 +112,26 @@ export default {
       const self = this
       if (!self.stats) {
         self.stats = new Stats();
-        document.getElementById('testThree').appendChild( self.stats.dom );
+        document.getElementById('pointsWaves').appendChild( self.stats.dom );
       } else {
         self.stats.update();
       }
     }
   },
   mounted() {
-    this.init()
-    this.animate()
+    this.$nextTick(() => {
+      this.init()
+      this.animate()
+    })
   }
 }
 </script>
+
+<style lang="less" scoped>
+#pointsWaves{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+</style>
