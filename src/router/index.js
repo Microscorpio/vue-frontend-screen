@@ -14,7 +14,7 @@ const routes = [
         name: 'index',
         component: resolve => require(['@/views/index/index'], resolve),
         meta: {
-          title: ''
+          title: '首页'
         }
       }
     ]
