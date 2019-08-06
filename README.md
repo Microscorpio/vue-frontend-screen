@@ -1,5 +1,7 @@
 # vue-frontend-screen
 
+![image](https://github.com/Microscorpio/vue-frontend-screen/tree/master/src/assets/image/demo.png)
+
 ## Project setup
 ```
 npm install
