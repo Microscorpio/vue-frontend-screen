@@ -49,7 +49,7 @@ module.exports = {
     "space-comment": [0],
     "brace-style": [0],
     "no-multi-spaces": 0,
-    "no-use-v-if-with-v-for": 0,
+    "vue/no-use-v-if-with-v-for": "off",
     "no-case-declarations": 0
   },
   globals: {}

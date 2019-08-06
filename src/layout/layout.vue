@@ -1,7 +1,9 @@
 <template>
   <stage>
     <stage-header></stage-header>
-    <router-view></router-view>
+    <dashboard>
+      <router-view></router-view>
+    </dashboard>
   </stage>
 </template>
 
@@ -9,13 +11,16 @@
 import stage from '@/components/stage/stage'
 import stageEvent, { EVENT_SCALE_CHANGE } from '@/components/stage/stageEvent'
 import stageHeader from './header'
+import dashboard from './dashboard'
 export default {
   components: {
     stage,
-    stageHeader
+    stageHeader,
+    dashboard
   },
   created() {
     this.onScaleChange = (scale) => {
+      // 保存&更新scale值的变化
       this.$store.commit('common/scale', scale);
     }
   },

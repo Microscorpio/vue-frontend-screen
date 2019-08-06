@@ -1,4 +1,6 @@
 @import "reset";
+@import "variable";
+@import "iconfont";
 
 html{
   width: 100%;
@@ -12,4 +14,236 @@ body{
   background-size: cover;
   background-position: top center;
   overflow: hidden
+}
+.container{
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+/*布局方式*/
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+/*对齐方式*/
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.center {
+  .align-center;
+  .justify-center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-fix {
+  flex-shrink: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/*字体*/
+.ft10 {
+  font-size: 12px;
+  transform: scale(0.8);
+  white-space: nowrap;
+}
+
+.ft12 {
+  font-size: 12px;
+}
+
+.ft13 {
+  font-size: 13px;
+}
+
+.ft14 {
+  font-size: 14px;
+}
+
+.ft15 {
+  font-size: 15px;
+}
+
+.ft16 {
+  font-size: 16px;
+}
+
+.ft17 {
+  font-size: 17px;
+}
+
+.ft18 {
+  font-size: 18px;
+}
+
+.ft19 {
+  font-size: 19px;
+}
+
+.ft20 {
+  font-size: 20px;
+}
+
+.ft22 {
+  font-size: 22px;
+}
+
+.ft24 {
+  font-size: 24px;
+}
+
+.ft28 {
+  font-size: 28px;
+}
+
+.ft32 {
+  font-size: 32px;
+}
+
+.ft40 {
+  font-size: 40px;
+}
+
+.ft50 {
+  font-size: 50px;
+}
+
+.ft64 {
+  font-size: 64px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+/*字体颜色*/
+.fc_999 {
+  color: @font-999-color;
+}
+
+.fc_888 {
+  color: @font-888-color;
+}
+
+.fc_666 {
+  color: @font-666-color;
+}
+
+.fc_555 {
+  color: @font-555-color;
+}
+
+.fc_000 {
+  color: @font-black-color;
+}
+
+.fc_444 {
+  color: @font-444-color;
+}
+
+.fc_fff {
+  color: @font-white-color;
+}
+
+.fc_4A4A4A {
+  color: @font-4A4A4A-color;
+}
+
+.fc_3EE19A {
+  color: @font-3EE19A-color;
+}
+
+.fc_FC475F {
+  color: #fc475f;
+}
+
+.fc_409EFF {
+  color: @font-409EFF-color;
+}
+
+.font-blue-color {
+  color: @font-blue-color;
+}
+
+.fc_fff {
+  color: #ffffff;
+}
+
+.fc_FC475F {
+  color: #fc475f;
+}
+
+.fc_success {
+  color: #67C23A;
+}
+
+.fc_4D8CFF {
+  color: @font-4D8CFF-color;
+}
+
+.bac_color_gray {
+  background-color: #F4F5F7;
+}
+
+.bac_color_white {
+  background-color: white;
+}
+
+.p20{
+  padding: 20px;
+}
+.panel-title{
+  line-height: 30px;
+  font-size: 20px;
+  margin-bottom: 15px;
 }

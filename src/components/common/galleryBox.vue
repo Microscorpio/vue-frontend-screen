@@ -1,9 +1,10 @@
 <template>
   <div class="gallery-box"
-       :style="{height:  height ? height +'px' : '100%', width: width ? width +'px' : '100%'}">
+    :style="{height:  height ? height +'px' : '100%', width: width ? width +'px' : '100%'}">
     <div class="gallery-box-content"
-         @mouseenter="clearTimer"
-         @mouseleave="playLoop">
+      v-if="dataSource && dataSource.length > 0"
+      @mouseenter="clearTimer"
+      @mouseleave="playLoop">
       <div :class="active===index?'active':''"
            class="gallery-box-item"
            v-for="(item,index) in dataSource"
@@ -12,7 +13,7 @@
              :src="item.uri"/>
         <div class="video-box" v-if="item.type==='video'">
           <div class="btn-play" @click="playVideo($event)">
-            <i class="iconfont" :class="videoClassName"></i>
+            <i class="iconfont ft20" :class="videoClassName"></i>
           </div>
           <video type="video/mp4"
                  :src="active===index?item.uri:''"
@@ -23,8 +24,8 @@
         </div>
       </div>
       <div class="gallery-box-info" v-if="showInfo">
-        <a href="javascript:;" class="info-btn info-btn-prev" @click="prev"><i class="iconfont iconbannerjiantou"></i></a>
-        <a href="javascript:;" class="info-btn info-btn-next" @click="next"><i class="iconfont iconbannerjiantou"></i></a>
+        <a href="javascript:;" class="info-btn info-btn-prev" @click="prev"><i class="iconfont icon-arrow"></i></a>
+        <a href="javascript:;" class="info-btn info-btn-next" @click="next"><i class="iconfont icon-arrow"></i></a>
         <div class="box-info" v-for="(item, index) in dataSource" v-if="active===index"
              :key="index">
           <div class="flex flex-row">
@@ -56,12 +57,13 @@
         </ul>
       </div>
       <div class="gallery-box-button gallery-box-button-prev" v-if="!showInfo">
-        <a href="javascript:;" @click="prev"><i class="iconfont iconbannerjiantou"></i></a>
+        <a href="javascript:;" @click="prev"><i class="iconfont icon-arrow"></i></a>
       </div>
       <div class="gallery-box-button gallery-box-button-next" v-if="!showInfo">
-        <a href="javascript:;" @click="next"><i class="iconfont iconbannerjiantou"></i></a>
+        <a href="javascript:;" @click="next"><i class="iconfont icon-arrow"></i></a>
       </div>
     </div>
+    <empty v-if="dataSource.length <= 0" :height="height"></empty>
   </div>
 </template>
 
@@ -87,9 +89,9 @@
     computed: {
       videoClassName: function () {
         if (this.videoPlaying) {
-          return 'iconzanting';
+          return 'icon-pause';
         } else {
-          return 'iconbofang1';
+          return 'icon-play';
         }
       }
     },

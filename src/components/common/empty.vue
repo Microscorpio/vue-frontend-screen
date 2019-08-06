@@ -1,6 +1,6 @@
 <template>
-  <div class="flex align-center justify-center" :style="{height: height + 'px'}">
-    <span class="ft14 fc_999">{{text}}</span>
+  <div class="empty-box" :style="{height: height + 'px'}">
+    <span>{{text}}</span>
   </div>
 </template>
 
@@ -13,3 +13,17 @@
     }
   }
 </script>
+
+<style lang="less" scoped>
+.empty-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span{
+    font-size: 14px;
+    color: #999;
+  }
+}
+</style>
+

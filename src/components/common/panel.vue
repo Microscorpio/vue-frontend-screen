@@ -1,6 +1,12 @@
 <template>
   <div class="panel-wrapper"
-       :style="{width: width + 'px', height: height > 0 ? height + 'px' : 'auto', position: position}">
+       :style="{
+         width: width + 'px', 
+         height: height > 0 ? height + 'px' : 'auto', 
+         position: position,
+         top: top ? top + 'px' : 'auto',
+         left: left ? left + 'px' : 'auto'
+       }">
     <slot></slot>
   </div>
 </template>
@@ -11,6 +17,8 @@ export default {
   props: {
     width: VueTypes.number.def(600),
     height: VueTypes.number.def(400),
+    top: VueTypes.number,
+    left: VueTypes.number,
     position: VueTypes.string.def('relative')
   }
 }

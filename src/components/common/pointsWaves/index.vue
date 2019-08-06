@@ -11,7 +11,7 @@ export default {
     mouseX: VueTypes.number.def(0),
     mouseY: VueTypes.number.def(-550),
     spearation: VueTypes.number.def(50),
-    aMountX: VueTypes.number.def(40),
+    aMountX: VueTypes.number.def(30),
     aMountY: VueTypes.number.def(20),
     fov: VueTypes.number.def(75),
     near: VueTypes.number.def(1),

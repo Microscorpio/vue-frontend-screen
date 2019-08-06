@@ -1,6 +1,6 @@
 <template>
   <span class="screen-full" @click="screenFull">
-    <i class="iconfont ft14" :class="[isFullscreen?'iconquanpingmoshi-tuichu':'iconquanpingmoshi']"></i>
+    <i class="iconfont ft14" :class="[isFullscreen?'icon-screen':'icon-screen-full']"></i>
     <span class="ft14">{{isFullscreen?'退出全屏':'全屏模式'}}</span>
   </span>
 </template>

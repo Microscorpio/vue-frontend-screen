@@ -10,16 +10,12 @@
       marginTop:-(height/2) * defaultScale +'px'
     }">
     <slot></slot>
-    <points-waves></points-waves>
   </div>
 </template>
 <script>
   import stageEvent, {EVENT_SCALE_CHANGE} from './stageEvent'
-  import pointsWaves from '@/components/common/pointsWaves/index'
+  
   export default{
-    components: {
-      pointsWaves
-    },
     props: {
       width: {
         type: Number,

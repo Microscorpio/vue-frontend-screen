@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <panel :width="1920" :height="900"></panel>
-  </div>
+  <section>
+    333
+  </section>
 </template>
 
 <script>
@@ -13,4 +13,3 @@ export default {
 <style lang="less" scoped>
 
 </style>
-
