@@ -6,7 +6,7 @@ const defaults = {
   total: 500,
   lineWidth: 13,
   textSize: 30,
-  textColor: '#C4D3FF',
+  textColor: '#ffffff',
   strokeColor: '#252C3F',
   activeColor: '#3ee19a',
   startColor: "#13D8D3",

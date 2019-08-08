@@ -68,6 +68,14 @@ export default {
       self.activeIndex = index
       self.$router.push({name: self.navList[index].router})
     }
+  },
+  mounted() {
+    const self = this
+    self.navList.forEach((item, index) => {
+      if (item.router === self.$route.name) {
+        self.activeIndex = index
+      }
+    })
   }
 }
 </script>

@@ -34,7 +34,7 @@
         self.radiusProgress = new DrawRadiusProgress(this.id, {
           name: self.name,
           size: self.size,
-          lineWidth: 12,
+          lineWidth: 14,
           textSize: 12,
           percent: self.percentVal,
           activeColor: self.color
@@ -56,7 +56,6 @@
     },
     watch: {
       percent: function(val) {
-        console.log('percentVal', val)
         if (val) {
           this.percentVal = val
           this.refresh()

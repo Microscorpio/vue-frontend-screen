@@ -73,7 +73,7 @@
               itemStyle: {
                 normal: {
                   borderWidth: this.borderWidth,
-                  borderColor: '#0B101E',
+                  borderColor: '#fff',
                 }
               },
               data: this.dataSource.map(item => {

@@ -19,11 +19,10 @@
           <div v-else class="default-img-wrap">
             <img
               class="default-img"
-              src="../../assets/image/defaultCarouselImg.png" alt="">
+              src="../../assets/image/placeholder.png" alt="">
           </div>
         </div>
         <p class="carousel-title text-overflow" :title="item.title">{{item.title}}</p>
-        <p class="carousel-date">{{item.date}}</p>
       </li>
     </ul>
   </div>
@@ -33,28 +32,18 @@
   export default {
     props: {
       clickItem: VueTypes.func.def(() => null),
-      showCount: VueTypes.number.def(2),
+      showCount: VueTypes.number.def(3),
       width: VueTypes.number.def(235),
       height: VueTypes.number.def(154),
       dataSource: VueTypes.arrayOf(VueTypes.shape({
-        uri: VueTypes.string,
-        title: VueTypes.string,
-        date: VueTypes.string,
-        childFiles:VueTypes.array,
-        content:VueTypes.string
+        uri: VueTypes.string.def(''),
+        title: VueTypes.string.def(''),
       })),
       delay: VueTypes.number.def(4),
     },
-    watch: {
-      dataSource(newVal) {
-        if(newVal && newVal.length > this.showCount) {
-          this.dataList = [...this.dataSource, ...this.dataSource]
-        }
-      }
-    },
     data() {
       return {
-        dataList: [],
+        dataList: [...this.dataSource, ...this.dataSource],
         activeIndex: 0,
         transition: true,
         timer: null,
@@ -142,14 +131,6 @@
       color: #C4D3FF;
       text-align: center;
       font-size: 14px;
-    }
-    .carousel-date {
-      font-size: 12px;
-      font-weight: 300;
-      color: #AEB8D4;
-      line-height: 17px;
-      text-align: center;
-      margin-top: 5px;
     }
     .transition {
       transition: all 0.5s;
